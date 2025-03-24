@@ -32,3 +32,24 @@ A REST API for generating detailed multi-section PDF reports for employee record
 ```bash
 git clone https://github.com/yourusername/employee-report-system.git
 cd employee-report-system
+
+### 2. Configure Database
+-Create a PostgreSQL database named employee_reports:
+psql -U postgres
+CREATE DATABASE employee_reports;
+
+-Update the database configuration in src/main/resources/application.properties if needed:
+spring.datasource.url=jdbc:postgresql://localhost:5432/employee_reports
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+
+
+### 3. Build the application
+mvn clean install
+
+## 4.Run the application
+mvn spring-boot:run
+or
+java -jar target/employee-report-system-0.0.1-SNAPSHOT.jar
+
+-The application will start on port 8080 by default.
